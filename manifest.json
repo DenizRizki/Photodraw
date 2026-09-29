@@ -1,0 +1,19 @@
+{
+  "name": "Photodraw - AR Drawing",
+  "short_name": "Photodraw",
+  "description": "Sketch on any flat surface with your phone and save the result as a real photo.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

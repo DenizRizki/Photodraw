@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta name="description" content="Photodraw - draw and save artwork in augmented reality, right from your phone browser." />
+  <title>Photodraw - AR Drawing</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="landing">
+    <header class="hero">
+      <h1 class="title">Photo<span class="title-accent">draw</span></h1>
+      <p class="tagline">Sketch on any flat surface with your phone and save the result as a real photo.</p>
+    </header>
+
+    <section class="card checks" aria-labelledby="checks-heading">
+      <h2 id="checks-heading" class="card-title">Device check</h2>
+      <ul class="check-list" id="check-list">
+        <li class="check" data-check="secure"><span class="check-icon"></span><span class="check-label">Secure connection (HTTPS)</span></li>
+        <li class="check" data-check="webgl"><span class="check-icon"></span><span class="check-label">WebGL support</span></li>
+        <li class="check" data-check="camera"><span class="check-icon"></span><span class="check-label">Camera access</span></li>
+      </ul>
+      <p class="check-detail" id="check-detail"></p>
+    </section>
+
+    <section class="card" aria-labelledby="how-heading">
+      <h2 id="how-heading" class="card-title">How it works</h2>
+      <ol class="steps">
+        <li>Open the marker image on a second screen, or print it.</li>
+        <li>Tap <strong>Start AR</strong> and point your camera at the marker.</li>
+        <li>Draw on the surface that appears over the marker.</li>
+      </ol>
+      <button type="button" class="marker-toggle" id="marker-toggle" aria-expanded="false" aria-controls="marker-panel">
+        Show the marker
+      </button>
+      <div class="marker-panel" id="marker-panel" hidden>
+        <img src="assets/card.png" alt="Photodraw tracking marker" width="674" height="372" />
+        <p>Keep it flat, well lit, and fill the frame. You can also open this page on a tablet and lay it on a table.</p>
+      </div>
+    </section>
+
+    <div class="actions">
+      <a class="btn btn-primary" id="start-btn" href="ar.html" aria-disabled="true">Start AR</a>
+      <p class="footnote">Your camera feed never leaves the device. Nothing is uploaded.</p>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

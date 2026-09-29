@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>Photodraw - AR</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="vendor/mindar-image-1.1.4.prod.js"></script>
+  <script src="vendor/aframe-1.5.0.min.js"></script>
+  <script src="vendor/mindar-image-aframe-1.1.4.prod.js"></script>
+</head>
+<body class="ar">
+  <div id="ar-root">
+    <a-scene
+      id="scene"
+      mindar-image="imageTargetSrc: assets/card.mind; uiLoading: no; uiScanning: no; uiError: no"
+      color-space="sRGB"
+      renderer="colorManagement: true; physicallyCorrectLights: true; preserveDrawingBuffer: true"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false">
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0" drawsurface></a-entity>
+    </a-scene>
+  </div>
+
+  <div class="hud hud-top">
+    <a class="icon-btn" href="index.html" aria-label="Back to start">&#8592;</a>
+    <span class="pill" id="status-pill" data-state="loading">
+      <span class="pill-dot"></span>
+      <span id="status-text">Starting</span>
+    </span>
+  </div>
+
+  <div class="hud hud-bottom">
+    <p class="hint" id="hint">Point your camera at the marker</p>
+  </div>
+
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p id="loader-text">Loading AR engine</p>
+  </div>
+
+  <div class="fatal" id="fatal" hidden>
+    <h2>Cannot start AR</h2>
+    <p id="fatal-text"></p>
+    <a class="btn btn-primary" href="index.html">Back to start</a>
+  </div>
+
+  <script src="js/scene.js"></script>
+</body>
+</html>
